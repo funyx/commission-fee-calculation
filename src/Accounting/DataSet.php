@@ -21,4 +21,9 @@ class DataSet implements \IteratorAggregate
 			yield $v;
 		}
 	}
+
+	public function jsonEntry(int $n)
+	{
+		return json_encode($this->data[$n]);
+	}
 }

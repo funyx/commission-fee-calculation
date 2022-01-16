@@ -14,7 +14,6 @@ array_shift($argv);
 if (is_null(strlen($argv[0]))) {
 	throw new RuntimeException('Missing input CSV file');
 }
-
 $app = new Kernel();
-$app->loadFile(sys_path: __DIR__.DIRECTORY_SEPARATOR.'input.csv', list_type: TransactionList::class);
+$app->loadFile(sys_path: $argv[0], list_type: TransactionList::class);
 $app->run(new CommissionFee());

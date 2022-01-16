@@ -36,7 +36,7 @@ class Kernel
 		}
 	}
 
-	public function run( Operation $operation, bool $stdout = true ): ?\Generator
+	public function run( Operation $operation, bool $stdout = true ): null|\Generator
 	{
 		$operation->setData($this->data_set);
 		$operation->setListType($this->list_type);
@@ -44,8 +44,8 @@ class Kernel
 			foreach ($operation->run() as $output) {
 				print $output.PHP_EOL;
 			}
-		}else{
-			return $operation->run();
+			return null;
 		}
+		return $operation->run();
 	}
 }

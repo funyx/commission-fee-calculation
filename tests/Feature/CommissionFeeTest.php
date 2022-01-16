@@ -7,7 +7,7 @@ use Funyx\CommissionFeeCalculation\Accounting\CommissionFee as CommissionFeeOper
 use Funyx\CommissionFeeCalculation\Accounting\TransactionList;
 use Funyx\CommissionFeeCalculation\Tests\TestCase;
 
-class CommissionFee extends TestCase
+class CommissionFeeTest extends TestCase
 {
 	/**
 	 * @test
@@ -35,7 +35,7 @@ class CommissionFee extends TestCase
 			'JPY' => 129.53,
 		]);
 		foreach ($this->app->run(operation: $cfo, stdout: false) as $k => $l) {
-			self::assertSame($l, $expected[$k], sprintf("Test commission fee result %s", $k));
+			self::assertSame($l, $expected[$k], sprintf("Test commission fee for transaction %s -> %s", $k, $cfo->getData()->jsonEntry($k)));
 		}
 	}
 
