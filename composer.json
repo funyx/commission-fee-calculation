@@ -1,0 +1,29 @@
+{
+  "name": "funyx/commission-fee-calculation",
+  "license": "Apache-2.0",
+  "authors": [
+	{
+	  "name": "Dimitar Dobchev",
+	  "email": "ddobchev@gmail.com"
+	}
+  ],
+  "autoload": {
+	"psr-4": {
+	  "Funyx\\CommissionFeeCalculation\\": "src/"
+	}
+  },
+  "autoload-dev": {
+	"psr-4": {
+	  "Funyx\\CommissionFeeCalculation\\Tests\\": "tests/"
+	}
+  },
+  "require": {
+	"php": ">=8.0",
+	"ext-bcmath": "*",
+	"ext-curl": "*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.5",
+    "phpunit/phpunit": "^9.5"
+  }
+}
